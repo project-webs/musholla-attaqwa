@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musholla Attaqwa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .hero-bg {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("./public/musholla_hero.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <div
+              class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center mr-3"
+            >
+              <i class="fa-solid fa-mosque text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-gray-800">Musholla Attaqwa</h1>
+              <p class="text-xs text-gray-500">
+                Kp Gardu, Ds Buaran RT 03 RW 01, Kec. Serpong, Kota Tangerang
+                Selatan
+              </p>
+            </div>
+          </div>
+
+          <!-- Menu Desktop -->
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="text-gray-800 hover:text-green-500 font-medium transition"
+              >Beranda</a
+            >
+            <a
+              href="#profile"
+              class="text-gray-800 hover:text-green-500 font-medium transition"
+              >Profil</a
+            >
+            <a
+              href="#kegiatan"
+              class="text-gray-800 hover:text-green-500 font-medium transition"
+              >Kegiatan</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-800 hover:text-green-500 font-medium transition"
+              >Kontak</a
+            >
+          </nav>
+
+          <!-- Hamburger Menu (Mobile) -->
+          <button id="menu-toggle" class="md:hidden text-gray-800">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="md:hidden hidden flex-col mt-4 space-y-2">
+          <a
+            href="#home"
+            class="block py-2 px-4 text-gray-800 hover:text-green-500 font-medium"
+            >Beranda</a
+          >
+          <a
+            href="#profile"
+            class="block py-2 px-4 text-gray-800 hover:text-green-500 font-medium"
+            >Profil</a
+          >
+          <a
+            href="#kegiatan"
+            class="block py-2 px-4 text-gray-800 hover:text-green-500 font-medium"
+            >Kegiatan</a
+          >
+          <a
+            href="#contact"
+            class="block py-2 px-4 text-gray-800 hover:text-green-500 font-medium"
+            >Kontak</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <script>
+      const toggleBtn = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      toggleBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const menuLinks = mobileMenu.querySelectorAll("a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+    </script>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-bg min-h-[60vh] flex items-center text-white"
+    >
+      <div class="container mx-auto px-4 py-20">
+        <div class="max-w-2xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Selamat Datang di</h1>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Musholla Attaqwa</h1>
+          <p class="text-lg md:text-xl mb-6">
+            Musholla Attaqwa berkomitmen membangun karakter Islami, menumbuhkan
+            ilmu dan amal shalih, serta mempererat ukhuwah di lingkungan Kampung
+            Gardu, Buaran, sesuai dengan tuntunan Nabi Muhammad ﷺ . Tempat ini
+            menjadi pusat kebaikan dan kebersamaan dalam meniti jalan menuju
+            ridha Allah Ta’ala.
+          </p>
+          <p class="italic">
+            “Bersaudara dalam Ketaatan, Melangkah Menuju Ridha Allah.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profil Section -->
+    <section id="profile" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Profil Musholla</h2>
+          <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/2">
+            <img
+              src="./public/musholla_inside.jpg"
+              alt="Musholla Attaqwa"
+              class="rounded-lg shadow-lg w-full h-auto"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              Tentang Musholla Attaqwa
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Musholla Attaqwa didirikan sebagai rumah ibadah dan pusat
+              pembinaan umat yang berlandaskan pada ajaran Al-Qur’an dan Sunnah
+              Rasulullah ﷺ . Tujuan utama pendirian musholla ini bukan sekadar
+              tempat shalat berjamaah, tetapi juga sebagai wadah untuk membina
+              keimanan, memperkuat ukhuwah, serta menumbuhkan kecintaan kepada
+              ilmu dan amal shalih.
+            </p>
+            <p class="text-gray-600 mb-4">
+              Sebagaimana sabda Rasulullah ﷺ: “Sebaik-baik tempat di muka bumi
+              adalah masjid.” (HR. Muslim)
+            </p>
+            <p class="text-gray-600 mb-4">
+              Dengan semangat itu, Musholla Attaqwa berupaya menghadirkan
+              lingkungan yang penuh keberkahan, tempat di mana dzikir, ilmu, dan
+              amal kebaikan tumbuh bersama. Kegiatan-kegiatan di musholla
+              diarahkan agar menghidupkan sunnah Rasulullah ﷺ dan membina
+              masyarakat agar kembali kepada kemurnian tauhid serta adab yang
+              mulia.
+            </p>
+            <!-- <ul class="list-disc list-inside text-gray-600">
+              <li>Kajian rutin dan TPA anak-anak</li>
+              <li>Shalat berjamaah dan pengajian warga</li>
+              <li>Kegiatan sosial dan santunan</li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kegiatan Section -->
+    <section id="kegiatan" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Kegiatan Musholla
+          </h2>
+          <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+          <p class="text-gray-600 mt-4">
+            Dokumentasi kegiatan sosial dan kebersamaan warga di Musholla
+            Attaqwa
+          </p>
+        </div>
+
+        <!-- Kegiatan 1 -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+            Karya Bakti Kodiklat TNI
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img
+              src="./public/kegiatan/kodiklat1.jpg"
+              alt="Karya Bakti Kodiklat TNI"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/kodiklat2.jpg"
+              alt="Karya Bakti Kodiklat TNI"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/kodiklat3.jpg"
+              alt="Karya Bakti Kodiklat TNI"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/kodiklat4.jpg"
+              alt="Karya Bakti Kodiklat TNI"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/kodiklat5.jpg"
+              alt="Karya Bakti Kodiklat TNI"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/kodiklat6.jpg"
+              alt="Karya Bakti Kodiklat TNI"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/kodiklat7.jpg"
+              alt="Karya Bakti Kodiklat TNI"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/kodiklat8.jpg"
+              alt="Karya Bakti Kodiklat TNI"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+
+        <!-- Kegiatan 2 -->
+        <div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+            Karya Bakti Paragon
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img
+              src="./public/kegiatan/paragon1.jpg"
+              alt="Karya Bakti Paragon"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/paragon2.jpg"
+              alt="Karya Bakti Paragon"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/paragon3.jpg"
+              alt="Karya Bakti Paragon"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/paragon4.jpg"
+              alt="Karya Bakti Paragon"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/paragon5.jpg"
+              alt="Karya Bakti Paragon"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/paragon6.jpg"
+              alt="Karya Bakti Paragon"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/paragon7.jpg"
+              alt="Karya Bakti Paragon"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="./public/kegiatan/paragon8.jpg"
+              alt="Karya Bakti Paragon"
+              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jadwal Sholat Section -->
+    <section id="jadwal" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Jadwal Sholat Hari Ini
+          </h2>
+          <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+          <p class="text-gray-600 mt-4">
+            Waktu sholat untuk wilayah Jakarta dan sekitarnya — sumber data dari
+            MuslimPro.com
+          </p>
+        </div>
+
+        <div class="rounded-lg overflow-hidden shadow-md max-w-4xl mx-auto">
+          <iframe
+            src="https://app.muslimpro.com/id/prayer-times/indonesia/waktu-salat-south-tangerang/8581443"
+            width="100%"
+            height="600"
+            style="border: none"
+            loading="lazy"
+            title="Jadwal Sholat Jakarta"
+          ></iframe>
+        </div>
+
+        <p class="text-center text-sm text-gray-500 mt-4">
+          Sumber:
+          <a
+            href="https://app.muslimpro.com/id/prayer-times/indonesia/waktu-salat-south-tangerang/8581443"
+            target="_blank"
+            class="text-green-600 hover:underline"
+            >MuslimPro.com</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="contact" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+          <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Info Kontak -->
+          <div class="md:w-1/2">
+            <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                Informasi Kontak
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-4"
+                  >
+                    <i class="fas fa-map-marker-alt text-green-500"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800">Alamat</h4>
+                    <p class="text-gray-600">
+                      Kp Gardu, Ds Buaran RT 03 RW 01, Kec. Serpong, Kota
+                      Tangerang Selatan
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-4"
+                  >
+                    <i class="fas fa-phone-alt text-green-500"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800">Telepon</h4>
+                    <p class="text-gray-600">0878-8833-8542</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-4"
+                  >
+                    <i class="fas fa-envelope text-green-500"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800">Email</h4>
+                    <p class="text-gray-600">musholla.attaqwa@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Peta Lokasi -->
+          <div class="md:w-1/2">
+            <div class="rounded-lg overflow-hidden shadow-md">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7930.833420437808!2d106.68153073388349!3d-6.340038644646118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5060d5cf0a3%3A0xace90864c852a5ce!2sMUSHOLLA%20AT%20TAQWA!5e0!3m2!1sen!2sid!4v1762864272688!5m2!1sen!2sid"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <!-- <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.320847640022!2d106.68370899999999!3d-6.300974999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa8c2a7b3e79%3A0x594ef4b8f4b2e2e3!2sMusholla%20Attaqwa%20-%20Buaran!5e0!3m2!1sid!2sid!4v1731349999999!5m2!1sid!2sid"
+            width="100%"
+            height="350"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-green-600 text-white py-10 mt-16">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8"
+        >
+          <!-- Kolom 1: Identitas -->
+          <div class="md:w-1/3 text-center md:text-left">
+            <h3 class="text-2xl font-bold mb-2">Musholla Attaqwa</h3>
+            <p class="text-sm text-green-100 leading-relaxed">
+              Kp Gardu, Ds Buaran RT 03 RW 01, Kec. Serpong, Kota Tangerang
+              Selatan<br />
+              Tempat ibadah dan pembinaan umat — Menebar cahaya iman,
+              menumbuhkan ketaqwaan.
+            </p>
+          </div>
+
+          <!-- Kolom 2: Navigasi Cepat -->
+          <div class="md:w-1/3 text-center">
+            <h4 class="text-lg font-semibold mb-3">Navigasi</h4>
+            <ul class="space-y-2 text-green-100">
+              <li>
+                <a href="#home" class="hover:text-white transition">Beranda</a>
+              </li>
+              <li>
+                <a href="#profile" class="hover:text-white transition"
+                  >Profil</a
+                >
+              </li>
+              <li>
+                <a href="#kegiatan" class="hover:text-white transition"
+                  >Kegiatan</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-white transition"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3: Sosial Media -->
+          <div class="md:w-1/3 text-center md:text-right">
+            <h4 class="text-lg font-semibold mb-3">Ikuti Kami</h4>
+            <div class="flex justify-center md:justify-end space-x-4">
+              <a href="#" class="hover:text-green-200 transition"
+                ><i class="fab fa-facebook text-xl"></i
+              ></a>
+              <a href="#" class="hover:text-green-200 transition"
+                ><i class="fab fa-instagram text-xl"></i
+              ></a>
+              <a href="#" class="hover:text-green-200 transition"
+                ><i class="fab fa-whatsapp text-xl"></i
+              ></a>
+              <a href="#" class="hover:text-green-200 transition"
+                ><i class="fab fa-youtube text-xl"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-green-400 mt-8 pt-6 text-center text-green-100 text-sm"
+        >
+          <p>&copy; <span id="year"></span> Musholla Attaqwa</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Menampilkan tahun otomatis di footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
